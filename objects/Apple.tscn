@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsulyvantoppi"]
+
+[ext_resource type="Texture2D" uid="uid://ee8x3ko16aci" path="res://art/Fruit+.png" id="1_wisdv"]
+
+[node name="Apple" type="Sprite2D"]
+texture = ExtResource("1_wisdv")
+hframes = 38
+vframes = 6

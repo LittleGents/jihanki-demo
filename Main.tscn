@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc4g1ybtidfn"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_bxvbu"]
+[ext_resource type="PackedScene" uid="uid://cdtssdiq4mfo3" path="res://ui/Background.tscn" id="1_pucli"]
+[ext_resource type="PackedScene" uid="uid://75g4mgsgxo2f" path="res://objects/Jihanki.tscn" id="2_18teu"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_bxvbu")
+
+[node name="Background" parent="." instance=ExtResource("1_pucli")]
+
+[node name="Jihanki" parent="." instance=ExtResource("2_18teu")]
+position = Vector2(577, 315)
+
+[node name="SoldierSpawn" type="Marker2D" parent="."]
+position = Vector2(-55, 536)
+scale = Vector2(1.09969, 1)
+
+[node name="SoldierExit" type="Marker2D" parent="."]
+position = Vector2(1247, 551)
+scale = Vector2(1.09969, 1)
+
+[node name="SoldierWait" type="Marker2D" parent="."]
+position = Vector2(471, 392)
+scale = Vector2(1.09969, 1)
+
+[connection signal="item_can_be_picked_up" from="Jihanki" to="." method="_on_jihanki_item_can_be_picked_up"]

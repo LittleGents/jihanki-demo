@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://4oq2hmmidber"]
+
+[ext_resource type="Texture2D" uid="uid://ee8x3ko16aci" path="res://art/Fruit+.png" id="1_vc0gr"]
+
+[node name="Banana" type="Sprite2D"]
+texture = ExtResource("1_vc0gr")
+hframes = 38
+vframes = 6
+frame = 83

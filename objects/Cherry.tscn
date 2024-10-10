@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://rouwwa872er6"]
+
+[ext_resource type="Texture2D" uid="uid://ee8x3ko16aci" path="res://art/Fruit+.png" id="1_fr6ry"]
+
+[node name="Cherry" type="Sprite2D"]
+texture = ExtResource("1_fr6ry")
+hframes = 38
+vframes = 6
+frame = 90

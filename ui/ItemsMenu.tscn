@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddc681gqtgtgl"]
+
+[ext_resource type="Script" path="res://scripts/ItemsMenu.gd" id="1_gu2j3"]
+[ext_resource type="PackedScene" uid="uid://cow84u11uag6l" path="res://ui/Item.tscn" id="1_sw13d"]
+
+[node name="ItemsMenu" type="CanvasLayer"]
+script = ExtResource("1_gu2j3")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_top = 324.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Items" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 29
+
+[node name="Apple" parent="CenterContainer/Items" instance=ExtResource("1_sw13d")]
+layout_mode = 2
+
+[node name="Label" parent="CenterContainer/Items/Apple" index="0"]
+text = "Apple"
+
+[node name="Banana" parent="CenterContainer/Items" instance=ExtResource("1_sw13d")]
+layout_mode = 2
+
+[node name="Label" parent="CenterContainer/Items/Banana" index="0"]
+text = "Banana"
+
+[node name="Cherry" parent="CenterContainer/Items" instance=ExtResource("1_sw13d")]
+layout_mode = 2
+
+[node name="Label" parent="CenterContainer/Items/Cherry" index="0"]
+text = "Cherry"
+
+[connection signal="item_dispatched" from="CenterContainer/Items/Apple" to="." method="_on_item_a_item_dispatched"]
+[connection signal="item_dispatched" from="CenterContainer/Items/Banana" to="." method="_on_item_b_item_dispatched"]
+[connection signal="item_dispatched" from="CenterContainer/Items/Cherry" to="." method="_on_item_c_item_dispatched"]
+
+[editable path="CenterContainer/Items/Apple"]
+[editable path="CenterContainer/Items/Banana"]
+[editable path="CenterContainer/Items/Cherry"]

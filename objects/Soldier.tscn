@@ -1,0 +1,100 @@
+[gd_scene load_steps=15 format=3 uid="uid://c37yro8i1qjf1"]
+
+[ext_resource type="Texture2D" uid="uid://ck2gsqrhq1pcl" path="res://art/Soldier-Walk.png" id="1_nqw18"]
+[ext_resource type="Script" path="res://scripts/Soldier.gd" id="1_r51bi"]
+[ext_resource type="PackedScene" uid="uid://dkmqqrivmtrdb" path="res://objects/ThinkingBubble.tscn" id="3_xdhbo"]
+[ext_resource type="Texture2D" uid="uid://btdvicka07avi" path="res://art/3dot_thinking_bubble.png" id="4_jndf3"]
+[ext_resource type="Texture2D" uid="uid://dnf1gw3nvo567" path="res://art/music_thinking_bubble.png" id="5_vvoct"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o341x"]
+atlas = ExtResource("1_nqw18")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p5ww"]
+atlas = ExtResource("1_nqw18")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fptgc"]
+atlas = ExtResource("1_nqw18")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp43n"]
+atlas = ExtResource("1_nqw18")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucka5"]
+atlas = ExtResource("1_nqw18")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toiki"]
+atlas = ExtResource("1_nqw18")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a217e"]
+atlas = ExtResource("1_nqw18")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_to0pk"]
+atlas = ExtResource("1_nqw18")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_itu3l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o341x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p5ww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fptgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yp43n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucka5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toiki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a217e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_to0pk")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Soldier" type="Node2D"]
+script = ExtResource("1_r51bi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-150, -171)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_itu3l")
+animation = &"walk"
+centered = false
+
+[node name="ItemHoldingPosition" type="Marker2D" parent="."]
+position = Vector2(13, -15)
+
+[node name="ThinkingBubble" parent="." instance=ExtResource("3_xdhbo")]
+visible = false
+position = Vector2(-16, -43)
+
+[node name="SadThinkingBubble" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-28, -60)
+scale = Vector2(2, 2)
+texture = ExtResource("4_jndf3")
+
+[node name="HappyThinkingBubble" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-28, -58)
+scale = Vector2(2, 2)
+texture = ExtResource("5_vvoct")

@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://75g4mgsgxo2f"]
+
+[ext_resource type="Script" path="res://scripts/Jihanki.gd" id="1_1hwik"]
+[ext_resource type="Texture2D" uid="uid://mc03t8uxoo4i" path="res://art/Vending Machine 1.1.png" id="1_mk64y"]
+[ext_resource type="PackedScene" uid="uid://ddc681gqtgtgl" path="res://ui/ItemsMenu.tscn" id="3_rug2r"]
+[ext_resource type="PackedScene" uid="uid://d0q40iljxrdrc" path="res://objects/HandClick.tscn" id="4_313gr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yxdv"]
+size = Vector2(44, 79)
+
+[node name="Jihanki" type="Node2D"]
+script = ExtResource("1_1hwik")
+
+[node name="ItemsMenu" parent="." instance=ExtResource("3_rug2r")]
+visible = false
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="Area2D"]
+position = Vector2(-22, -94)
+texture = ExtResource("1_mk64y")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -42.5)
+shape = SubResource("RectangleShape2D_5yxdv")
+
+[node name="ItemDispatchPoint" type="Marker2D" parent="."]
+position = Vector2(0, 45)
+
+[node name="HandClick" parent="." instance=ExtResource("4_313gr")]
+visible = false
+position = Vector2(0, 3)
+
+[connection signal="item_a_dispatched" from="ItemsMenu" to="." method="_on_items_menu_item_a_dispatched"]
+[connection signal="item_b_dispatched" from="ItemsMenu" to="." method="_on_items_menu_item_b_dispatched"]
+[connection signal="item_c_dispatched" from="ItemsMenu" to="." method="_on_items_menu_item_c_dispatched"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

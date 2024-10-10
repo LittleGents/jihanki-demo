@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkmqqrivmtrdb"]
+
+[ext_resource type="Texture2D" uid="uid://df5ecpgtb5ck" path="res://art/empty_thinking_bubble.png" id="1_kmohw"]
+[ext_resource type="Script" path="res://scripts/ThinkingBubble.gd" id="2_qc7qh"]
+[ext_resource type="PackedScene" uid="uid://dsulyvantoppi" path="res://objects/Apple.tscn" id="2_qkcr8"]
+[ext_resource type="PackedScene" uid="uid://4oq2hmmidber" path="res://objects/Banana.tscn" id="3_vkrx1"]
+[ext_resource type="PackedScene" uid="uid://rouwwa872er6" path="res://objects/Cherry.tscn" id="4_stk4q"]
+
+[node name="ThinkingBubble" type="Sprite2D"]
+position = Vector2(0, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("1_kmohw")
+centered = false
+offset = Vector2(-22, -25)
+script = ExtResource("2_qc7qh")
+
+[node name="Apple" parent="." instance=ExtResource("2_qkcr8")]
+visible = false
+position = Vector2(-8.5, -13)
+scale = Vector2(0.8, 0.8)
+
+[node name="Banana" parent="." instance=ExtResource("3_vkrx1")]
+visible = false
+position = Vector2(-9, -12)
+scale = Vector2(0.8, 0.8)
+
+[node name="Cherry" parent="." instance=ExtResource("4_stk4q")]
+visible = false
+position = Vector2(-8.5, -12)
+scale = Vector2(0.8, 0.8)
